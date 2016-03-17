@@ -96,13 +96,3 @@ $di->setShared('session', function () {
 
     return $session;
 });
-
-$di->set(
-    'router',
-    function () {
-        //require __DIR__.'/../app/config/routes.php';
-        require '/../app/config/routes.php';
-
-        return $router;
-    }
-);
