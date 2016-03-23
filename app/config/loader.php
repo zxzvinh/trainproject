@@ -10,7 +10,8 @@ $loader->registerNamespaces(array(
 	'Train\Models'      => __DIR__ . '/../models/',
 	'Train\Forms'		=> __DIR__ . '/../forms/',
 	'Train\Libs'		=> __DIR__ . '/../libs/',
+	'Train\Controllers\Admin' 	=> __DIR__ . '/../admin/controllers/',
 ))->register();
 
 // Use composer autoloader to load vendor classes
-require_once __DIR__ . '/../../vendor/autoload.php';
+//require_once __DIR__ . '/../../vendor/autoload.php';

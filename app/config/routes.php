@@ -26,4 +26,6 @@ $router->add('/admin/:controller', array(
 	'controller' => 1
 ));
 
+
+
 return $router;

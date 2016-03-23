@@ -1,8 +1,9 @@
 <?php
+namespace Train\Controllers\Admin;
 
-use Phalcon\Mvc\Model\Validator\Email as Email;
+use Phalcon\Mvc\Model;
 
-class Users extends \Phalcon\Mvc\Model
+class Users extends Model
 {
 
     /**
@@ -15,67 +16,26 @@ class Users extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    public $name;
+    public $username;
+
+    /**
+     *
+     * @var char[60]
+     */
+    public $password;
 
     /**
      *
      * @var string
      */
-    public $email;
+    public $full_name;
 
     /**
-     * Validations and business logic
-     *
-     * @return boolean
+     * Initialize method for model.
      */
-    public function validation()
+    public function initialize()
     {
-        $this->validate(
-            new Email(
-                array(
-                    'field'    => 'email',
-                    'required' => true,
-                )
-            )
-        );
-
-        if ($this->validationHasFailed() == true) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Returns table name mapped in the model.
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return 'users';
-    }
-
-    /**
-     * Allows to query a set of records that match the specified conditions
-     *
-     * @param mixed $parameters
-     * @return Users[]
-     */
-    public static function find($parameters = null)
-    {
-        return parent::find($parameters);
-    }
-
-    /**
-     * Allows to query the first record that match the specified conditions
-     *
-     * @param mixed $parameters
-     * @return Users
-     */
-    public static function findFirst($parameters = null)
-    {
-        return parent::findFirst($parameters);
+        // $this->belongsTo('role_id', 'Roles', 'id', array('alias' => 'Roles'));
     }
 
 }
